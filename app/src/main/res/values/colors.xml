@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="white">#FFFFFF</color>
+    <color name="society">#F06292</color>
+    <color name="society_center_color">#FCE4EC</color>
+    <color name="science">#7986CB</color>
+    <color name="science_center_color">#E8EAF6</color>
+    <color name="science_text_color">#1A237E</color>
+    <color name="politics">#4DB6AC</color>
+    <color name="politics_center_color">#E0F2F1</color>
+    <color name="music">#FF8A65</color>
+    <color name="music_center_color">#FBE9E7</color>
+    <color name="teacher_network">#9575CD</color>
+    <color name="teacher_network_center_color">#EDE7F6</color>
+    <color name="opinion">#4DD0E1</color>
+    <color name="opinion_center_color">#E0F7FA</color>
+
+</resources>
