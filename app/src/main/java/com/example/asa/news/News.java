@@ -6,12 +6,14 @@ public class News {
     private String mTitle;
     private String mCatagory;
     private String mTime;
+    private String mURL;
 
     //Constructor
-    public News(String title, String catagory, String time) {
+    public News(String title, String catagory, String time, String url) {
         mTitle = title;
         mCatagory = catagory;
         mTime = time;
+        mURL = url;
     }
 
     //Getter fonctions
@@ -26,5 +28,9 @@ public class News {
 
     public String getmTime() {
         return mTime;
+    }
+
+    public String getmURL() {
+        return mURL;
     }
 }

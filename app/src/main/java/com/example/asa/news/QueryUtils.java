@@ -34,7 +34,8 @@ public class QueryUtils {
                 String sectionName = jsonObjectSub.getString("sectionName");
                 String title = jsonObjectSub.getString("webTitle");
                 String timeFull = jsonObjectSub.getString("webPublicationDate");
-                news.add(new News(title, sectionName, timeFull));
+                String url = jsonObjectSub.getString("webUrl");
+                news.add(new News(title, sectionName, timeFull, url));
             }
         } catch (JSONException e) {
             Log.e("QueryUtils", "Get JSONObject failed.");

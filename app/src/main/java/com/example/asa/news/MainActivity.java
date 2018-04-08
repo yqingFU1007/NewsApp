@@ -2,12 +2,15 @@ package com.example.asa.news;
 
 import android.app.LoaderManager;
 import android.content.Context;
+import android.content.Intent;
 import android.content.Loader;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -36,11 +39,25 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         textViewConnection = (TextView) findViewById(R.id.text_internet);
         earthquakeListView.setEmptyView(textViewConnection);
 
-        ArrayList<News> news = new ArrayList<>();
+        final ArrayList<News> news = new ArrayList<>();
         ListView listView = (ListView) findViewById(R.id.list);
         mNewsAdapter = new NewsAdapter(this, news);
 
         listView.setAdapter(mNewsAdapter);
+
+        earthquakeListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+                News newsCurrent = mNewsAdapter.getItem(position);
+                String url = newsCurrent.getmURL();
+
+                Intent intent = new Intent();
+                intent.setAction("android.intent.action.VIEW");
+                Uri content_url = Uri.parse(url);
+                intent.setData(content_url);
+                startActivity(intent);
+            }
+        });
 
         // Get a reference to the ConnectivityManager to check state of network connectivity
         ConnectivityManager connMgr = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
